@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Skin</title>
+    <link rel="icon" href="./Photos/bg.jpg" />
+    <style>
+        :root {
+            --h: 0px
+        }
+        html {
+            min-height: 100%;
+            background-color: #DCD9D4;
+            background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%);
+            background-blend-mode: soft-light,screen;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            margin: 0px;
+        }
+        #tsawer {
+            display: flex;
+            flex-direction: column;
+            box-shadow: -1px 1px 10px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 50px;
+            overflow: auto;
+            padding: 20px;
+            max-width: 90%;
+            max-height: calc(var(--h) * 60/100);
+        }
+        #tsawer img {
+            width: 250px;
+            height: 300px;
+            margin: 10px;
+            border-radius: 25px;
+        }
+        button {
+            width: 95%;
+            color: #9c8f7c;
+            border-radius: 25px;
+            border: none;
+            padding: 7px;
+            margin: 10px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="gg" style="max-width: 100%; overflow: auto; text-align: center;">hy</h1>
+    <div id="tsawer"></div>
+    <p id="pargraph" style="text-align: center; overflow: auto; max-width: 95%;"></p>
+    <button id="soum" onclick="passeCommande()">Buy it now: </button>
+    <script>
+        let r = document.querySelector(':root')
+        r.style.setProperty('--h', String(document.documentElement.clientHeight) + 'px')
+
+
+        document.getElementById('gg').innerHTML = localStorage.getItem('ism')
+        document.getElementById('pargraph').innerHTML = localStorage.getItem('pargraph')
+        if (localStorage.getItem('soum') !== "0") {
+            document.getElementById('soum').innerHTML = 'Buy it now: ' + localStorage.getItem('soum') +'dt'
+        } else {
+            document.getElementById('soum').style.display = 'none'
+        }
+        for (let index = 1; index <= localStorage.getItem('nbrImg'); index++) {
+            const im = document.createElement('img')
+            const imatt = document.createAttribute('src')
+            imatt.value = './Photos/' + localStorage.getItem('ism') + '/' + 'p' + String(index) + '.jpg'
+            im.setAttributeNode(imatt)
+            document.getElementById('tsawer').appendChild(im)
+        }
+
+        if (localStorage.getItem('9a4ya reserve') !== null) {
+            localStorage.getItem('9a4ya reserve') === null ? undefined : localStorage.setItem('9a4ya', localStorage.getItem('9a4ya reserve'))
+            localStorage.removeItem('9a4ya reserve')
+        }
+        function passeCommande() {
+            localStorage.getItem('9a4ya') === null ? undefined : localStorage.setItem('9a4ya reserve', localStorage.getItem('9a4ya'))
+            localStorage.setItem('9a4ya', localStorage.getItem('ism') + ': ' + localStorage.getItem('soum') +'dt/')
+            window.location.href = './dist/formulaire.html'
+        }
+
+    </script>
+</body>
+</html>

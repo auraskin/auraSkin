@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="icon" href="../Photos/bg.jpg" />
+    <script>
+        if (localStorage.getItem('9a4ya') === null) {
+            window.location.href = '../index.html'
+        }
+        let par = document.querySelector(':root')
+        par.style.setProperty('--h', innerHeight + 'px')
+    </script>
+    <style>
+        :root {
+            --h: 0
+        }
+
+        html {
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(to top, #c4b8a6 0%, #c4b8a696 100%);
+            margin: 0;
+            height: var(--h);
+            overflow: clip;
+        }
+
+        .itar {
+            width: 300px;
+            height: 400px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10%;
+            backdrop-filter: blur(20px);
+            padding-top: 25px;
+        }
+
+        .circle {
+            background-color: #000;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            /* background-image: linear-gradient(45deg, #b4a897 0%, #ffdde1c7 100%); */
+            background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+        }
+
+        .first {
+            position: absolute;
+            top: -75px;
+            left: 225px;
+        }
+
+        .second {
+            position: absolute;
+            bottom: -75px;
+            right: 225px;
+        }
+
+        form {
+            width: 250px;
+            margin: auto;
+            margin-top: 15px;
+        }
+
+        input {
+            width: 90%;
+            height: 25px;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            border: 0;
+            padding: 2px 4px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .out {
+            /* background-image: linear-gradient(to top, #b4a897 0%, #cbc4b9 100%, #b4a897 100%, #cbc4b9 100%); */
+            background-image: linear-gradient(135deg, #fdfcfb 100%, #e2d1c3 0%);
+            margin-top: 0;
+            color: #47423b;
+        }
+
+        .in {
+            /* background-image: linear-gradient(45deg, #b4a897 0%, #cbc4b9 100%); */
+            background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+            margin-top: 0;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/f767ad1a86.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="principal" style="position: relative;">
+        <div class="circle first"></div>
+        <div class="circle second"></div>
+        <div class="itar">
+            <form id="for" action="index.html">
+                <input id="e-mail" value="" type="email" placeholder="e-mail" class="in" name="e-mail" required><br>
+                <input id="FirstName" value="" type="text" placeholder="First Name" class="in" name="FirstName" required><br>
+                <input id="LastName" value="" type="text" placeholder="Last Name" class="in" name="LastName" required><br>
+                <input id="Number" value="" type="text" placeholder="Phone number" class="in" name="Number" required><br>
+                <input id="adress" value="" type="text" placeholder="Adress" class="in" name="adress" required><br>
+                <input type="submit" value="Check out" class="out">
+            </form>
+        </div>
+    </div>
+    <div style="transform: scale(5); display: none; transition-duration: 0.5s;" id="spin"><i class="fa-solid fa-atom fa-spin" style="color: #47423b;"></i></div>
+    <script src="bundle.js"></script>
+</body>
+
+</html>

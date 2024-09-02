@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Skin</title>
+    <link rel="icon" href="./Photos/bg.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --h: 0px
+        }
+        html {
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100%;
+            background-color: #c4b8a6;
+            background-clip: 50%;
+        }
+        body {
+            min-height: 100%;
+            margin: 0;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            background-image: url('./Photos/bg.png');
+            background-size: 60%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #pushBotton {
+            width: 150px;
+            height: 150px;
+            border-radius: 125px;
+            position: absolute;
+            bottom: 50px;
+            background-image: linear-gradient(135deg, #fdfcfb85 0%, #e2d1c385 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+        }
+        .activation {
+            transform: translateY(calc(0px - var(--h)/2 + 50px + 75px)) scale(10);
+            transition-duration: 0.5s;
+            color: #ffffff00;
+        }
+        #menu {
+            width: 90%;
+            max-height: 100%;
+            flex-wrap: wrap;
+            position: absolute;
+            display: none;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            overflow: auto;
+        }
+        .circels {
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            transform: scale(0);
+            transition-duration: 0.75s;
+            background-color: #9ba5d3;
+            margin: 12px;
+        }
+        .chariot {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: scale(0);
+            transition-duration: 0.75s;
+            z-index: 2;
+        }
+        .activationCircles {
+            transform: scale(1);
+            transition-duration: 1s;
+        }
+        .activationChariot {
+            transform: scale(4);
+            transition-duration: 1s;
+        }
+        #cosrx {
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+        }
+        #mixsoon {
+            background-color: #9cc6bf;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+        }
+        #contella {
+            background-color: #4d8a41;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            flex-direction: column;
+            text-align: center;
+        }
+        #glowrecipe {
+            background-color: #f9dcf6;
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            text-align: center;
+            font-family: "Work Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            letter-spacing: 1.5px;
+        }
+        #anua {
+            background-color: #fff;
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 45px;
+            flex-direction: column;
+            text-align: center;
+            font-family: "Work Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .sel3a {
+            display: none;
+            margin: auto;
+            width: 95%;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .produit {
+            margin: 10px;
+            width: 300px;
+            height: 500px;
+            border-radius: 50px;
+            box-shadow: -1px 1px 10px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: scale(0);
+            transition-duration: 1s;
+        }
+        .retourBotton {
+            position: sticky;
+            margin: 20px;
+            bottom: 20px;
+            padding: 15px;
+            background-image: linear-gradient(135deg, #fdfcfb96 0%, #e2d1c396 100%);
+            border-radius: 25px;
+            font-size: 30px;
+            transform: scale(0);
+            transition-duration: 1s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .activationProduit {
+            transform: scale(1);
+            transition-duration: 800ms;
+        }
+        .produit img {
+            width: 250px;
+            height: 300px;
+            border-radius: 25px;
+        }
+        .produit button {
+            width: 95%;
+            color: #9c8f7c;
+            border-radius: 25px;
+            border: none;
+            padding: 7px;
+            /* z-index: 2; */
+        }
+        .passerBotton {
+            margin: 20px;
+            padding: 15px;
+            background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+            border-radius: 25px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/f767ad1a86.js" crossorigin="anonymous"></script>
+</head>
+<body id="body">
+    <div id="menu">
+        <div class="circels" id="cosrx" onclick="toProduit('pcosrx')">COSRX</div>
+        <div class="circels" id="mixsoon" onclick="toProduit('pmixsoon')">mixsoon</div>
+        <div class="circels" id="glowrecipe" onclick="toProduit('pglowrecipe')">GLOW RECIPE</div>
+        <div class="circels" id="contella" onclick="toProduit('pcontella')">CENTELLA <span style="font-size: 8px; font-family: sans-serif; font-weight: 600; letter-spacing: 1.5px;">KOREAN CARE</span></div>
+        <div class="circels" id="anua" onclick="toProduit('panua')">Anua</div>
+    </div>
+    <div class="chariot" onclick="toChariot('sel3aChrineha')">
+        <i class="fa-solid fa-cart-shopping fa-fade" style="color: #606c72; "></i>
+    </div>
+    <div style="flex-direction: column; width: 100%;">
+        <div id="pcosrx" class="sel3a">
+            <div class="produit">
+                <h3 style="text-align: center;" onclick="todetail('Advanced Snail 96 Mucin Power Essence', 110, 6, 'Light-weight essence which absorbs into the skin fast to give skin a natural glow from the inside. This essence is created from nutritious, low-stimulation filtered snail mucin to keep your skin moisturized and illuminated all day.')">
+                    Advanced Snail 96 Mucin Power Essence
+                </h3>
+                <img src="./Photos/Advanced Snail 96 Mucin Power Essence.jpg" onclick="todetail('Advanced Snail 96 Mucin Power Essence', 110, 6, 'Light-weight essence which absorbs into the skin fast to give skin a natural glow from the inside. This essence is created from nutritious, low-stimulation filtered snail mucin to keep your skin moisturized and illuminated all day.')">
+                <p>110dt</p>
+                <button onclick="ajChariot('Advanced Snail 96 Mucin Power Essence', '110dt')">Add to cart</button>
+            </div>
+            <div class="produit">
+                <h3 style="text-align: center;" onclick="todetail('Advanced Snail 92 All in one', 125, 1, 'An all-in-one solution cream that repairs and soothes irritated, sensitized skin after breakouts. A rich gel-type cream absorbs instantly into the skin with a full of nourishment while leaving your skin feeling fresh and comfortable.')">
+                    Advanced Snail 92 All in one
+                </h3>
+                <img src="./Photos/Advanced Snail 92 All in one.jpg" onclick="todetail('Advanced Snail 92 All in one', 125, 1, 'An all-in-one solution cream that repairs and soothes irritated, sensitized skin after breakouts. A rich gel-type cream absorbs instantly into the skin with a full of nourishment while leaving your skin feeling fresh and comfortable.')">
+                <p>125dt</p>
+                <button onclick="ajChariot('Advanced Snail 92 All in one', '125dt')">Add to cart</button>
+            </div>
+            <div class="produit">
+                <h3 style="text-align: center;" onclick="todetail('COSRX SNAIL DUO KIT', 0, 1, '')">
+                    COSRX SNAIL DUO KIT
+                </h3>
+                <img src="./Photos/COSRX SNAIL DUO KIT.jpg" onclick="todetail('COSRX SNAIL DUO KIT', 0, 1, '')">
+                <p>195dt</p>
+                <button onclick="ajChariot('COSRX SNAIL DUO KIT', '195dt', false)">Solde out</button>
+            </div>
+            <div class="produit">
+                <h3 style="text-align: center;" onclick="todetail('Acne Pimple Master Patch', 30, 2, 'Quick acne healing overnight<br> Hydrocolloid patches that protect wounded or troubled area from getting worse while maintaining humidity of skin to prevent further breakouts.<br> Quantity : 24patches (9 Large Dots, 5 Medium Dots, 10 Small Dots) ')">
+                    Acne Pimple Master Patch
+                </h3>
+                <img src="./Photos/Acne Pimple Master Patch.jpg" onclick="todetail('Acne Pimple Master Patch', 30, 2, 'Quick acne healing overnight<br> Hydrocolloid patches that protect wounded or troubled area from getting worse while maintaining humidity of skin to prevent further breakouts.<br> Quantity : 24patches (9 Large Dots, 5 Medium Dots, 10 Small Dots) ')">
+                <p>30dt</p>
+                <button onclick="ajChariot('Acne Pimple Master Patch', '30dt')">Add to cart</button>
+            </div>
+        </div>
+        <div id="pmixsoon" class="sel3a">
+            <div class="produit">
+                <h3 style="text-align: center;" onclick="todetail('mixsoon Bean Essence', 135, 6, 'Bean Essence is a gentle essence, best for exfoliating and hydrating textured skin with zero skin irritation.<br>* It strengthens skin health, moisturizes, and revitalizes skin tone while taking care of dead skin cells to achieve a smooth skin texture.<br>* Key ingredients: Fermented bean, barley, pomegranate, and Korean pear<br>* Vegan. Free from alcohol and artificial fragrance.<br>For best results, use together with the Bean Essence No.2 as a lighter summer skincare routine.')">
+                    mixsoon Bean Essence
+                </h3>
+                <img src="./Photos/mixsoon Bean Essence.jpg" onclick="todetail('mixsoon Bean Essence', 135, 6, 'Bean Essence is a gentle essence, best for exfoliating and hydrating textured skin with zero skin irritation.<br>* It strengthens skin health, moisturizes, and revitalizes skin tone while taking care of dead skin cells to achieve a smooth skin texture.<br>* Key ingredients: Fermented bean, barley, pomegranate, and Korean pear<br>* Vegan. Free from alcohol and artificial fragrance.<br>For best results, use together with the Bean Essence No.2 as a lighter summer skincare routine.')">
+                <p>135dt</p>
+                <button onclick="ajChariot('mixsoon Bean Essence', '110dt')">Add to cart</button>
+            </div>
+            <div class="produit">
+                <h3 style="text-align: center;" onclick="todetail('mixsoon Bean Cream 50ml', 135, 6, 'mixsoon bean cream is a great moisturizer that forms a protective layer on the skin and retains moisture<br>* Smooth and thick texture full of nutrients, providing vitality for dull skin without stickiness.<br>* Key Ingredients: fermented bean extract, Korean pear, pomegranate, and barley')">
+                    mixsoon Bean Cream 50ml
+                </h3>
+                <img src="./Photos/mixsoon Bean Cream 50ml.jpg" onclick="todetail('mixsoon Bean Cream 50ml', 135, 6, 'mixsoon bean cream is a great moisturizer that forms a protective layer on the skin and retains moisture<br>* Smooth and thick texture full of nutrients, providing vitality for dull skin without stickiness.<br>* Key Ingredients: fermented bean extract, Korean pear, pomegranate, and barley')">
+                <p>135dt</p>
+                <button onclick="ajChariot('mixsoon Bean Cream 50ml', '135dt')">Add to cart</button>
+            </div>
+        </div>
+        <div id="pglowrecipe" class="sel3a">
+            <div class="produit">
+                <h3 style="text-align: center;" onclick="todetail('Watermelon Glow Niacinamide Dew Drops', 135, 2, 'Reveal a dewy glow instantly and over time with this niacinamide-infused highlighting serum, formulated without mica, glitter, or pearls. This first of its kind highlighting skincare + makeup hybrid helps visibly brighten skin and deliver an effortless glow instantly and over time, while helping to reduce hyperpigmentation and without leaving a gray cast.<br>This emulsion creates a lightweight, buildable texture that quickly absorbs, making it suitable for all skin types including oily or acne prone. Watermelon Glow Niacinamide Dew Drops can be used as a hydrating highlighting serum before moisturizer or as the last step of your routine to add an instant glossy finish.')">
+                    Watermelon Glow Niacinamide Dew Drops
+                </h3>
+                <img src="./Photos/Watermelon Glow Niacinamide Dew Drops.jpg" onclick="todetail('Watermelon Glow Niacinamide Dew Drops', 135, 2, 'Reveal a dewy glow instantly and over time with this niacinamide-infused highlighting serum, formulated without mica, glitter, or pearls. This first of its kind highlighting skincare + makeup hybrid helps visibly brighten skin and deliver an effortless glow instantly and over time, while helping to reduce hyperpigmentation and without leaving a gray cast.<br>This emulsion creates a lightweight, buildable texture that quickly absorbs, making it suitable for all skin types including oily or acne prone. Watermelon Glow Niacinamide Dew Drops can be used as a hydrating highlighting serum before moisturizer or as the last step of your routine to add an instant glossy finish.')">
+                <p>135dt</p>
+                <button onclick="ajChariot('Watermelon Glow Niacinamide Dew Drops', '135dt')">Add to cart</button>
+            </div>
+            <div class="produit">
+                <h3 style="text-align: center;" onclick="todetail('Watermelon Glow AHA Night Treatment', 159, 3, 'Get ready to reset your skin overnight. This clinically effective formula, inspired from our original cult-fave Watermelon Glow Sleeping Mask, resets skin overnight with a concentrated 2.5% pH-balanced AHA complex that delivers powerful exfoliation, without irritation, while multi-weight hyaluronic acid, niacinamide, quinoa peptide, watermelon enzymes hydrate, brighten & firm so you can wake up to the smooth, glowing, even-toned skin of your dreams.<br>NB: Sun Sensitivity Warning: This product contains an alpha hydroxy acid (AHA) that may increase your skins sensitivity to the sun and particularly the possibility of sunburn. Use a sunscreen, wear protective clothing, and limit sun exposure while using this product and for a week afterwards.')">
+                    Watermelon Glow AHA Night Treatment
+                </h3>
+                <img src="./Photos/Watermelon Glow AHA Night Treatment.jpg" onclick="todetail('Watermelon Glow AHA Night Treatment', 159, 3, 'Get ready to reset your skin overnight. This clinically effective formula, inspired from our original cult-fave Watermelon Glow Sleeping Mask, resets skin overnight with a concentrated 2.5% pH-balanced AHA complex that delivers powerful exfoliation, without irritation, while multi-weight hyaluronic acid, niacinamide, quinoa peptide, watermelon enzymes hydrate, brighten & firm so you can wake up to the smooth, glowing, even-toned skin of your dreams.<br>NB: Sun Sensitivity Warning: This product contains an alpha hydroxy acid (AHA) that may increase your skins sensitivity to the sun and particularly the possibility of sunburn. Use a sunscreen, wear protective clothing, and limit sun exposure while using this product and for a week afterwards.')">
+                <p>159dt</p>
+                <button onclick="ajChariot('Watermelon Glow AHA Night Treatment', '159dt')">Add to cart</button>
+            </div>
+        </div>
+        <div id="pcontella" class="sel3a">
+            <div class="produit">
+                <h3 style="text-align: center;" onclick="todetail('Centella Quick Calming Pad', 69, 4, 'An essence-rich toner pad with Centella and Panthenol soothes and hydrates the skin in a simple 2-minute step.<br>Product Benefits: Calming, Hydrating<br>Skin Type: Normal, Sensitive, Combination<br>Key Ingredients: Centella Asiatica Extract, Panthenol, Sodium Hyaluronate')">
+                    Centella Quick Calming Pad
+                </h3>
+                <img src="./Photos/Centella Quick Calming Pad.jpg" onclick="todetail('Centella Quick Calming Pad', 69, 4, 'An essence-rich toner pad with Centella and Panthenol soothes and hydrates the skin in a simple 2-minute step.<br>Product Benefits: Calming, Hydrating<br>Skin Type: Normal, Sensitive, Combination<br>Key Ingredients: Centella Asiatica Extract, Panthenol, Sodium Hyaluronate')">
+                <p>69dt</p>
+                <button onclick="ajChariot('Centella Quick Calming Pad', '69dt')">Add to cart</button>
+            </div>
+            <div class="produit">
+                <h3 style="text-align: center;" onclick="todetail('Hyalu-Cica Water-Fit Sun Serum SPF50+ PA++++', 79, 5, 'A serum-like chemical sunscreen that is super lightweight, hydrating, and quickly absorbed, with a non-greasy, dewy finish<br>Product Benefits: Moisturizing, Soothing, UV Protection <br>Skin Type: Sensitive, Normal, Dry<br>Key Ingredients:  Centella Asiatica Extract, Hyaluronic Acid, Camellia Sinensis Leaf Extract, Triticum Vulgare (Wheat) Sprout Extract, Camellia Japonica Leaf Extract, Brassica Oleracea Italica (Broccoli) Sprout Extract')">
+                    Hyalu-Cica Water-Fit Sun Serum SPF50+ PA++++
+                </h3>
+                <img src="./Photos/Hyalu-Cica Water-Fit Sun Serum SPF50+ PA++++.jpg" onclick="todetail('Hyalu-Cica Water-Fit Sun Serum SPF50+ PA++++', 79, 5, 'A serum-like chemical sunscreen that is super lightweight, hydrating, and quickly absorbed, with a non-greasy, dewy finish<br>Product Benefits: Moisturizing, Soothing, UV Protection <br>Skin Type: Sensitive, Normal, Dry<br>Key Ingredients:  Centella Asiatica Extract, Hyaluronic Acid, Camellia Sinensis Leaf Extract, Triticum Vulgare (Wheat) Sprout Extract, Camellia Japonica Leaf Extract, Brassica Oleracea Italica (Broccoli) Sprout Extract')">
+                <p>79dt</p>
+                <button onclick="ajChariot('Hyalu-Cica Water-Fit Sun Serum SPF50+ PA++++', '79dt')">Add to cart</button>
+            </div>
+            <div class="produit">
+                <h3 style="text-align: center;" onclick="todetail('Centella Toning Toner', 59, 4, 'A gentle PHA exfoliating toner that can be used daily to thoroughly improve skin texture.<br>Product Benefits: Calming, Soothing, Mild exfoliating<br>Skin Type: Normal, Sensitive<br>Key Ingredients: Centella Asiatica Extract, Gluconolactone, Betaine')">
+                    Centella Toning Toner
+                </h3>
+                <img src="./Photos/Centella Toning Toner.jpg" onclick="todetail('Centella Toning Toner', 59, 4, 'A gentle PHA exfoliating toner that can be used daily to thoroughly improve skin texture.<br>Product Benefits: Calming, Soothing, Mild exfoliating<br>Skin Type: Normal, Sensitive<br>Key Ingredients: Centella Asiatica Extract, Gluconolactone, Betaine')">
+                <p>59dt</p>
+                <button onclick="ajChariot('Centella Toning Toner', '59dt')">Add to cart</button>
+            </div>
+        </div>
+        <div id="panua" class="sel3a">
+            <div class="produit">
+                <h3 style="text-align: center;" onclick="todetail('NIACINAMIDE 10%+TXA 4% SERUM', 98, 4, 'A serum formulated with 10% niacinamide and 4% TXA, designed to promote the appearance of a more even skin tone.')">
+                    NIACINAMIDE 10%+TXA 4% SERUM
+                </h3>
+                <img src="./Photos/NIACINAMIDE 10%+TXA 4% SERUM.jpg" onclick="todetail('NIACINAMIDE 10%+TXA 4% SERUM', 98, 4, 'A serum formulated with 10% niacinamide and 4% TXA, designed to promote the appearance of a more even skin tone.')">
+                <p>98dt</p>
+                <button onclick="ajChariot('NIACINAMIDE 10%+TXA 4% SERUM', '98dt')">Add to cart</button>
+            </div>
+            <div class="produit">
+                <h3 style="text-align: center;" onclick="todetail('HEARTLEAF 77% SOOTHING TONER', 92, 4, 'Bestseller Facial Toner on Amazon<br>A soothing toner formulated with Heartleaf extract, designed to calm irritation and moisturize sensitive skin.')">
+                    HEARTLEAF 77% SOOTHING TONER
+                </h3>
+                <img src="./Photos/HEARTLEAF 77% SOOTHING TONER.jpg" onclick="todetail('HEARTLEAF 77% SOOTHING TONER', 92, 4, 'Bestseller Facial Toner on Amazon<br>A soothing toner formulated with Heartleaf extract, designed to calm irritation and moisturize sensitive skin.')">
+                <p>92dt</p>
+                <button onclick="ajChariot('HEARTLEAF 77% SOOTHING TONER', '92dt')">Add to cart</button>
+            </div>
+            <!-- <div class="produit">
+                <h3 style="text-align: center;" onclick="todetail('ism', 250, 3, 'paragraph')">
+                    ism
+                </h3>
+                <img src="./Photos/ism.jpg" onclick="todetail('ism', 250, 3, 'paragraph')">
+                <p>250dt</p>
+                <button onclick="ajChariot('ism', '250dt')">Add to cart</button>
+            </div> -->
+        </div>
+        <p id="cahriotParagraph" style="display: none; width: 100%; text-align: center; font-size: 25px; align-items: center; justify-content: center;">Cart vide</p>
+        <div id="sel3aChrineha" class="sel3a">
+        </div>
+        <div class="retourBotton" onclick="toMenu()">Go back to menu</div>
+    </div>
+    <div id="pushBotton" class="toActive" onclick="name()">Entrer</div>
+    <script src="index.js"></script>
+</body>
+</html>
