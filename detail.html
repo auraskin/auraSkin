@@ -58,6 +58,15 @@
     <script>
         let r = document.querySelector(':root')
         r.style.setProperty('--h', String(document.documentElement.clientHeight) + 'px')
+        function suppCh(params, ch) {
+            let sh = ''
+            for (let index = 0; index < ch.length; index++) {
+                if (ch[index] !== params) {
+                    sh = sh + ch[index]
+                }
+            }
+            return sh
+        } // supprimer le carcter params from chaine ch or element params from list ch
 
 
         document.getElementById('gg').innerHTML = localStorage.getItem('ism')
@@ -70,7 +79,7 @@
         for (let index = 1; index <= localStorage.getItem('nbrImg'); index++) {
             const im = document.createElement('img')
             const imatt = document.createAttribute('src')
-            imatt.value = './Photos/' + localStorage.getItem('ism') + '/' + 'p' + String(index) + '.jpg'
+            imatt.value = './Photos/' + suppCh('%', localStorage.getItem('ism')) + '/' + 'p' + String(index) + '.jpg'
             im.setAttributeNode(imatt)
             document.getElementById('tsawer').appendChild(im)
         }
